@@ -4,6 +4,8 @@ import json
 import random
 import numpy as np
 from itertools import repeat
+import pandas as pd
+
 max_tweets_Mex = 139400 # normalizados respecto a coyoacan i.e. 139400 es el num de tweets en coyo.
 max_tweets_UK = 99903 # respecto a camden
 
@@ -16,11 +18,34 @@ levels = [-1,0,1]
 for country in countries:
     for admin_level in levels:
 
+        path = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion','Formatted_data',country,'Level_{}'.format(admin_level),'')
+        file = os.listdir(path)
+        datos = pd.read_csv(os.path.join(path,file[0]))
+        datos = datos.sample(n=Tweets_country[country])
+        
+        out_path = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion','normalizados_con3KM',country,'Level_{}'.format(admin_level),'3hourly_csv_files',"")
+        if not os.path.exists(out_path):
+            os.makedirs(out_path)
+        
+        for ti in datos["Time Interval"].unique():
+            towrite = datos[ datos["Time Interval"] == ti ]
+            towrite = towrite[["Time Interval","Latitude","Longitude","Text"]]
+            towrite.to_csv(  os.path.join( out_path ,"{}.csv".format(ti) ) ,index=False,sep="\t" )
+
+
+
+
+
+
+
+for country in countries:
+    for admin_level in levels:
+
         if admin_level == -1:
-            path = '/storage/gershenson_g/gershenson/Ranks_15-10-18/Filtrados'
+            path = os.path.join(os.getenv("HOME"),"..","..","storage","gershenson_g","gershenson","Ranks_15-10-18","Filtrados")
             files = sorted(os.listdir(os.path.join(path,country,'')))
         else:
-            path = os.path.join(os.getenv("HOME"),'Datos_correctos',country,'Level_{}'.format(admin_level),'')
+            path = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion',country,'Level_{}'.format(admin_level),'')
             files = sorted(os.listdir(path))
         
         tamano = len(files)

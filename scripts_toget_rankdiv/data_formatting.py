@@ -15,10 +15,16 @@ levels = [-1,0,1]
 
 for country in countries:
     for admin_level in levels:
-        path = os.path.join(os.getenv("HOME"),'Datos_correctos','normalizados_conCoyo',country,'Level_{}'.format(admin_level),'')
-        output_folder = os.path.join(os.getenv("HOME"),'Datos_correctos','normalizados_conCoyo','Formatted_data',country,'Level_{}'.format(admin_level),'')
 
-        files = sorted(os.listdir(path))
+        if admin_level == -1:
+            path = os.path.join(os.getenv("HOME"),"..","..","storage","gershenson_g","gershenson","Ranks_15-10-18","Filtrados",country,'')
+            files = sorted(os.listdir(path))
+        else:
+            path = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion',country,'Level_{}'.format(admin_level),'')
+            files = sorted(os.listdir(path))
+
+        output_folder = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion','Formatted_data',country,'Level_{}'.format(admin_level),'')
+
         #files.remove('.DS_Store')
 
         n=0

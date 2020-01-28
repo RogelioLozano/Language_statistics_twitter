@@ -43,7 +43,7 @@ for country in countries:
                         data_filtered.append(tweet)
                 #print(len(data))
                 #print(len(data_filtered))
-                out_path = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion_comprimidos',country,'Level_{}'.format(admin_level),'')
+                out_path = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion',country,'Level_{}'.format(admin_level),'')
                 if not os.path.exists(out_path):
                     os.makedirs(out_path)
 
