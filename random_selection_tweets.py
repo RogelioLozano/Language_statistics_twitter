@@ -5,6 +5,7 @@ import random
 import numpy as np
 from itertools import repeat
 import pandas as pd
+import csv
 
 max_tweets_Mex = 139400 # normalizados respecto a coyoacan i.e. 139400 es el num de tweets en coyo.
 max_tweets_UK = 99903 # respecto a camden
@@ -17,19 +18,31 @@ countries = ["Mexico", "United_Kingdom"]
 Tweets_country = {"Mexico":max_tweets_Mex,"United_Kingdom":max_tweets_UK}
 levels = [-1,0]
 
+# Implementar una funcion que solo se ejecute una vez dentro del loop enumerate files
+def onlyonce(firstTime = []):
+    if firstTime == []:
+        firstTime.append('Not Empty')
+        return True
+    else:
+        return False
+
 for country in countries:
     for admin_level in levels:
 
         path = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion','Formatted_data',country,'Level_{}'.format(admin_level),'3hourly_csv_files','')
         files = os.listdir( os.path.join(path,'') )
         persample = Tweets_country[country] // len(files)
-
+        print("Numero de tweets a selecion por archivo csv:",persample)
         if not (persample*len(files) == Tweets_country[country]):
             residue = Tweets_country[country] - persample*len(files)
-
+    
         for index,file in enumerate(files):
-            datos = pd.read_csv(os.path.join(path,file),sep='\t')
-            if index == 0:
+            datos = pd.read_csv(os.path.join(path,file),sep='\t',quoting=csv.QUOTE_NONE)
+            print(datos)
+            if datos.empty:
+                nonemptyindex = index + 1
+                continue
+            if (index == nonemptyindex) and onlyonce():
                 datos = datos.sample(n=persample+residue)
             else:
                 datos = datos.sample(n=persample)
@@ -37,3 +50,4 @@ for country in countries:
             if not os.path.exists(out_path):
                 os.makedirs(out_path)
             datos.to_csv(  os.path.join( out_path ,file ) ,index=False,sep="\t" )
+
