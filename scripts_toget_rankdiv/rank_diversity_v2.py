@@ -5,13 +5,13 @@ import os
 
 number_of_ngrams=300
 
-countries = ["Mexico"]
+countries = ["United_Kingdom","Mexico"]
 levels = [1]
 
 for country in countries:
     for admin_level in levels:
 
-        file_location = os.path.join(os.getenv("HOME"),'Datos_correctos','normalizados_conCoyo','Frequency_lists',country,'Level_{}'.format(admin_level),'')
+        file_location = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion','normalizados_region','Frequency_lists',country,'Level_{}'.format(admin_level),'')
 
         for h in [3,6,12,24,48,96]:
             if h == 3:

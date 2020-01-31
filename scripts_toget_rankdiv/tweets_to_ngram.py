@@ -140,7 +140,7 @@ for country in countries:
                     frequencies=sorted(frequencies,key=lambda item: item[1],reverse=True)
             
 
-                    output_path = os.path.join(os.getenv("HOME"),'Datos_correctos','normalizados_region','Frequency_lists',country,'Level_{}'.format(admin_level),'3hourly',str(n)+'grams','')
+                    output_path = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion','normalizados_region','Frequency_lists',country,'Level_{}'.format(admin_level),'3hourly',str(n)+'grams','')
 
                     if not os.path.exists(output_path):
                         os.makedirs(output_path)

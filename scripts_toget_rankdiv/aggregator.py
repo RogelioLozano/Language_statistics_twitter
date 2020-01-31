@@ -5,14 +5,14 @@ import os
 
 # reads at h hour aggrgated data and return 2h aggregated data
 
-countries = ["Mexico"]
+countries = ["United_Kingdom","Mexico"]
 levels = [-1,0,1]
 
 for country in countries:
     for admin_level in levels:
         # loop over the time scales in order
         for h in [3,6,12,24,48]:
-            file_location = os.path.join(os.getenv("HOME"),'Datos_correctos','normalizados_conCoyo','Frequency_lists',country,'Level_{}'.format(admin_level),'')
+            file_location = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion','normalizados_region','Frequency_lists',country,'Level_{}'.format(admin_level),'')
             
             files=os.listdir(file_location+str(h)+'hourly/1grams/')
 
