@@ -21,7 +21,12 @@ for country in countries:
                 print(m,'of',int(len(files)/2))
                 for n in range(1,6):
             
-                    df=pd.read_csv(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(2*m)+'.csv',sep='\t',names=['ngram','frequency'])
+                    try:
+                        df=pd.read_csv(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(2*m)+'.csv',sep='\t',names=['ngram','frequency'])
+                    except FileNotFoundError:
+                        with open(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(2*m)+'.csv','w'):
+                            pass
+                    
                     # from the data frame create a list of words
                     ngrams=df['ngram'].tolist()
                     frequencies=df['frequency'].tolist()
@@ -29,8 +34,13 @@ for country in countries:
                     frequency_of={}
                     for i in range(len(ngrams)):
                         frequency_of[ngrams[i]]=frequencies[i]
-                
-                    df2=pd.read_csv(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(2*m+1)+'.csv',sep='\t',names=['ngram','frequency'])
+
+                    try:
+                        df2=pd.read_csv(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(2*m+1)+'.csv',sep='\t',names=['ngram','frequency'])
+                    except FileNotFoundError:
+                        with open(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(2*m+1)+'.csv','w'):
+                            pass
+
                     ngrams=df2['ngram'].tolist()
                     frequencies=df2['frequency'].tolist()
                     
