@@ -34,5 +34,5 @@ for country in countries:
             os.makedirs(out_path)
         
         for ti in alltweets["Time Interval"].unique():
-            towrite = datos[ datos["Time Interval"] == ti ]
+            towrite = alltweets[ alltweets["Time Interval"] == ti ]
             towrite.to_csv( os.path.join(out_path,"{}.csv".format(ti)), index=False, sep="\t" )
