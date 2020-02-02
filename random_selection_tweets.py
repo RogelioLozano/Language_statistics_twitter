@@ -29,6 +29,9 @@ for country in countries:
         alltweets = pd.concat(all_csvs,ignore_index=True)
         alltweets = alltweets.sample(n=Tweets_country[country])
 
+        # PRUEBA PARA VERIFICAR NUMEROS DE ARCHIVOS CSV (TIME INTERVALS)
+        # print(country,admin_level,np.sort(alltweets["Time Interval"].unique()),len(alltweets["Time Interval"].unique()))
+
         out_path = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion','normalizados_region',country,'Level_{}'.format(admin_level),'3hourly_csv_files',"")
         if not os.path.exists(out_path):
             os.makedirs(out_path)
