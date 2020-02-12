@@ -6,7 +6,7 @@ import os
 number_of_ngrams=300
 
 countries = ["United_Kingdom","Mexico"]
-levels = [1]
+levels = [-1,0,1]
 
 for country in countries:
     for admin_level in levels:
@@ -35,11 +35,11 @@ for country in countries:
 
                 for m in range(time_intervals):
 
-                    try:
-                        df=pd.read_csv(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(m)+'.csv',sep='\t',names=['ngram','frequency'])
-                    except FileNotFoundError:
-                        with open(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(m)+'.csv','w'):
-                            pass
+                    # try:
+                    df=pd.read_csv(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(m)+'.csv',sep='\t',names=['ngram','frequency'])
+                    # except FileNotFoundError:
+                    #     with open(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(m)+'.csv','w'):
+                    #         pass
                 
                     # from the data frame create a list of words
                     ngrams=df['ngram'].tolist()
@@ -55,7 +55,7 @@ for country in countries:
                 else:
                     rank_diversity=[0 for ngrams in ngrams_at_rank]
 
-                path=file_location+'results_{}grams/'.format(number_of_ngrams)
+                path=file_location+'results_{}grams_pruebaunitaria/'.format(number_of_ngrams)
                 if not os.path.exists(path):
                     os.makedirs(path)
 
