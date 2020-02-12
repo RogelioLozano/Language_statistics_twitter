@@ -30,12 +30,12 @@ for country in countries:
         alltweets = alltweets.sample(n=Tweets_country[country])
 
         # PRUEBA PARA VERIFICAR NUMEROS DE ARCHIVOS CSV (TIME INTERVALS)
-        print(country,admin_level,np.sort(alltweets["Time Interval"].unique()),len(alltweets["Time Interval"].unique()))
+        print(country,admin_level,np.sort(alltweets["Time Interval"].unique()),len(alltweets["Time Interval"].unique()),alltweets["Time Interval"].unique().shape)
 
-        # out_path = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion','normalizados_region',country,'Level_{}'.format(admin_level),'3hourly_csv_files',"")
-        # if not os.path.exists(out_path):
-        #     os.makedirs(out_path)
+        out_path = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion','normalizados_region',country,'Level_{}'.format(admin_level),'3hourly_csv_files',"")
+        if not os.path.exists(out_path):
+            os.makedirs(out_path)
         
-        # for ti in alltweets["Time Interval"].unique():
-        #     towrite = alltweets[ alltweets["Time Interval"] == ti ]
-        #     towrite.to_csv( os.path.join(out_path,"{}.csv".format(ti)), index=False, sep="\t" )
+        for ti in alltweets["Time Interval"].unique():
+            towrite = alltweets[ alltweets["Time Interval"] == ti ]
+            towrite.to_csv( os.path.join(out_path,"{}.csv".format(ti)), index=False, sep="\t" )
