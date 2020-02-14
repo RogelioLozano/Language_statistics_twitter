@@ -37,8 +37,7 @@ for country in countries:
                     try:
                         df=pd.read_csv(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(m)+'.csv',sep='\t',names=['ngram','frequency'])
                     except FileNotFoundError:
-                        with open(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(m)+'.csv','w'):
-                            continue
+                        continue
                 
                     # from the data frame create a list of words
                     ngrams=df['ngram'].tolist()

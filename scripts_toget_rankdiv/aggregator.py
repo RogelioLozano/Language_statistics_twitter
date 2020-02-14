@@ -23,32 +23,39 @@ for country in countries:
             
                     try:
                         df=pd.read_csv(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(2*m)+'.csv',sep='\t',names=['ngram','frequency'])
-                    except FileNotFoundError:
-                        with open(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(2*m)+'.csv','w'):
-                            pass
-                    
-                    # from the data frame create a list of words
-                    ngrams=df['ngram'].tolist()
-                    frequencies=df['frequency'].tolist()
-                    
-                    frequency_of={}
-                    for i in range(len(ngrams)):
-                        frequency_of[ngrams[i]]=frequencies[i]
+                        ngrams=df['ngram'].tolist()
+                        frequencies=df['frequency'].tolist()
 
+                        frequency_of={}
+                        for i in range(len(ngrams)):
+                            frequency_of[ngrams[i]]=frequencies[i]
+                        
+                        flag = 1
+
+                    except FileNotFoundError:
+                        try:
+                            df2=pd.read_csv(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(2*m+1)+'.csv',sep='\t',names=['ngram','frequency'])
+                            flag = 0
+                        except FileNotFoundError:
+                                continue
+                    
                     try:
                         df2=pd.read_csv(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(2*m+1)+'.csv',sep='\t',names=['ngram','frequency'])
-                    except FileNotFoundError:
-                        with open(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(2*m+1)+'.csv','w'):
-                            pass
+                        ngrams=df2['ngram'].tolist()
+                        frequencies=df2['frequency'].tolist()
 
-                    ngrams=df2['ngram'].tolist()
-                    frequencies=df2['frequency'].tolist()
-                    
-                    for i in range(len(ngrams)):        
-                        if ngrams[i] in frequency_of:
-                            frequency_of[ngrams[i]]=frequency_of[ngrams[i]]+frequencies[i]
+                        if flag != 1:
+                            frequency_of={}
+                            for i in range(len(ngrams)):
+                                frequency_of[ngrams[i]]=frequencies[i]
                         else:
-                            frequency_of[ngrams[i]]=frequencies[i]
+                            for i in range(len(ngrams)):        
+                                if ngrams[i] in frequency_of:
+                                    frequency_of[ngrams[i]]=frequency_of[ngrams[i]]+frequencies[i]
+                                else:
+                                    frequency_of[ngrams[i]]=frequencies[i]
+                    except FileNotFoundError:
+                        pass
                     
                     frequencies=[]
                     for ngram in frequency_of:
