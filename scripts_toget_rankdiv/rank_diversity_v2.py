@@ -53,7 +53,7 @@ for country in countries:
                 else:
                     rank_diversity=[0 for ngrams in ngrams_at_rank]
 
-                path=file_location+'results_{}grams_pruebaunitaria/'.format(number_of_ngrams)
+                path=file_location+'results_{}grams/'.format(number_of_ngrams)
                 if not os.path.exists(path):
                     os.makedirs(path)
 
