@@ -34,12 +34,11 @@ for country in countries:
                 number_of_days=0
 
                 for m in range(time_intervals):
-
-                    # try:
-                    df=pd.read_csv(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(m)+'.csv',sep='\t',names=['ngram','frequency'])
-                    # except FileNotFoundError:
-                    #     with open(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(m)+'.csv','w'):
-                    #         pass
+                    try:
+                        df=pd.read_csv(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(m)+'.csv',sep='\t',names=['ngram','frequency'])
+                    except FileNotFoundError:
+                        with open(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(m)+'.csv','w'):
+                            continue
                 
                     # from the data frame create a list of words
                     ngrams=df['ngram'].tolist()
