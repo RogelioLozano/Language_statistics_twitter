@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-number_of_ngrams=500
+number_of_ngrams=600
 
 countries = ["United_Kingdom","Mexico"]
 levels = [-1,0,1]
