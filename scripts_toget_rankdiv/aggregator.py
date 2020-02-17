@@ -16,9 +16,10 @@ for country in countries:
             
             files=os.listdir(file_location+str(h)+'hourly/1grams/')
 
-
-            for m in range(int(len(files)/2)):
-                print(m,'of',int(len(files)/2))
+            maxcsv=max([int(file[0:file.find('.')]) for file in files])
+            print(maxcsv)
+            
+            for m in range(int(maxcsv/2)):
                 for n in range(1,6):
             
                     try:
