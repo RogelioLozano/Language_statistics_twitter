@@ -1,6 +1,4 @@
 import os 
-import gzip
-import json
 import random
 import numpy as np
 from itertools import repeat

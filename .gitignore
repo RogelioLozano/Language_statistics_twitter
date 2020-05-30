@@ -1,0 +1,16 @@
+/Datos_todoslosPaises/copiarargentina.txt
+/Datos_todoslosPaises/sftcopiar.txt
+/Datos_todoslosPaises/India
+
+/Datos_todoslosPaises/Argentina/Level_*/results_*
+!/Datos_todoslosPaises/Argentina/Level_*/results_1000grams
+
+/Datos_todoslosPaises/Mexico/Level_*/results_*
+!/Datos_todoslosPaises/Mexico/Level_*/results_1000grams
+
+/Datos_todoslosPaises/United_Kingdom/Level_*/results_*
+!/Datos_todoslosPaises/United_Kingdom/Level_*/results_1000grams
+
+/Datos_todoslosPaises/Spain/Level_*/results_*
+!/Datos_todoslosPaises/Spain/Level_*/results_1000grams
+
