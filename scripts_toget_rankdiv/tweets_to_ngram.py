@@ -13,21 +13,25 @@
 import pandas as pd
 import os
 import random
+import numpy as np
 
 number_tweets = 1200000
 
-countries = ["Mexico","United_Kingdom"]
-levels = [-1,0,1]
+# countries = ["Mexico", "United_Kingdom","Spain","India"] 
+countries = ["Argentina"]
+
+dist4country = { "Mexico":np.arange(0,11), "United_Kingdom":np.arange(0,10),"Spain":np.arange(0,9),"India":np.arange(0,11),"South_Africa":np.arange(0,11),'Argentina':np.arange(0,11)}
+
 
 for country in countries:
-    for admin_level in levels:
-        path = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion','normalizados_region',country,'Level_{}'.format(admin_level))
+    for admin_level in range(len(dist4country[country])):
+        path = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporBuffer','normalizados_con3KM',country,'Level_{}'.format(admin_level))
 
         files = os.listdir( os.path.join(path,'3hourly_csv_files','') )
         # find the earliest time for which there is data
         first=min([int(file[0:file.find('.')]) for file in files])
 
-        random.shuffle(files) 
+        random.shuffle(files)
 
         count = 0
 
@@ -140,7 +144,7 @@ for country in countries:
                     frequencies=sorted(frequencies,key=lambda item: item[1],reverse=True)
             
 
-                    output_path = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion','normalizados_region','Frequency_lists',country,'Level_{}'.format(admin_level),'3hourly',str(n)+'grams','')
+                    output_path = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporBuffer','normalizados_con3KM','Frequency_lists',country,'Level_{}'.format(admin_level),'3hourly',str(n)+'grams','')
 
                     if not os.path.exists(output_path):
                         os.makedirs(output_path)

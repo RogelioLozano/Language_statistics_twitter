@@ -3,15 +3,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-number_of_ngrams=500
+number_of_ngrams=1000
 
-countries = ["United_Kingdom","Mexico"]
-levels = [-1,0,1]
+# countries = ["Mexico", "United_Kingdom","Spain","India"]
+countries = ["Argentina"]
+dist4country = { "Mexico":np.arange(0,11), "United_Kingdom":np.arange(0,10),"Spain":np.arange(0,9),"India":np.arange(0,11),"South_Africa":np.arange(0,11),'Argentina':np.arange(0,11)}
+
 
 for country in countries:
-    for admin_level in levels:
+    for admin_level in range(len(dist4country[country])):
 
-        file_location = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporRegion','normalizados_region','Frequency_lists',country,'Level_{}'.format(admin_level),'')
+        file_location = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporBuffer','normalizados_con3KM','Frequency_lists',country,'Level_{}'.format(admin_level),'')
 
         for h in [3,6,12,24,48,96]:
             if h == 3:
@@ -19,13 +21,13 @@ for country in countries:
             elif h == 6:
                 time_intervals = 1313
             elif h == 12:
-                time_intervals = 656
+                time_intervals = 657
             elif h == 24:
-                time_intervals = 328
+                time_intervals = 329
             elif h == 48:
-                time_intervals = 164
+                time_intervals = 165
             elif h == 96:
-                time_intervals = 82
+                time_intervals = 83
 
             for n in range(1,6):
                 #print(h,n)
@@ -38,7 +40,6 @@ for country in countries:
                         df=pd.read_csv(file_location+str(h)+'hourly/'+str(n)+'grams/'+str(m)+'.csv',sep='\t',names=['ngram','frequency'])
                     except FileNotFoundError:
                         continue
-                
                     # from the data frame create a list of words
                     ngrams=df['ngram'].tolist()
 
