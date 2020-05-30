@@ -37,4 +37,4 @@ In case that you didn't want/have the twitter data, I submited the relevant nume
 
 
 
-The [analysis notebook] shows the statistical methods performed and plots of the results. Here I show a sample of geolocated twitter data that belongs to a construcuted buffer as an example of the proximity analysis used in this project.
+The [analysis notebook](https://github.com/RogelioLozano/Language_statistics_twitter/blob/master/Analysis_notebook.ipynb) shows the statistical methods performed and plots of the results. Here I show a sample of geolocated twitter data that belongs to a construcuted buffer as an example of the proximity analysis used in this project.
