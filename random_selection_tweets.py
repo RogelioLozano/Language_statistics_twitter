@@ -9,8 +9,7 @@ import pandas as pd
 # This script normalize the number of tweets in all the buffers considered with the number of tweets in the buffer with radius of
 # 3Km, this normalization is achieve selecting the aforementioned number of tweets randomly.
 
-# countries = ["Mexico", "United_Kingdom","Spain","India"]
-countries = ["Argentina"]
+countries = ["Mexico", "United_Kingdom","Spain","Argentina"]
 
 for country in countries:
     prein_path = os.path.join(os.getenv("HOME"),'Datos_correctos','Tweets_filtadosporBuffer',country,"")

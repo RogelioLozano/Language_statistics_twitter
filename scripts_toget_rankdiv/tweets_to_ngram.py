@@ -1,15 +1,3 @@
-# 27 April 2018 - Ewan Colman
-# Code for reading twitter data from the excel sheet and ouputting ngram frequency lists.
-#
-# The file 'DataSample_IIMAS.xls' was first saved as a text file (.csv) with 
-# utf-18 encoding and saved in the same directory as the script.
-# An output directory Sample_results in the same folder as the script.
-# 
-# The output of this script is five text files named 1grams, 2grams, etc. that 
-# contain ordered lists of ngrams and their corresponding frequencies 
-
-
-# Modules required: 
 import pandas as pd
 import os
 import random
@@ -17,8 +5,7 @@ import numpy as np
 
 number_tweets = 1200000
 
-# countries = ["Mexico", "United_Kingdom","Spain","India"] 
-countries = ["Argentina"]
+countries = ["Mexico", "United_Kingdom","Spain","India","Argentina"] 
 
 dist4country = { "Mexico":np.arange(0,11), "United_Kingdom":np.arange(0,10),"Spain":np.arange(0,9),"India":np.arange(0,11),"South_Africa":np.arange(0,11),'Argentina':np.arange(0,11)}
 

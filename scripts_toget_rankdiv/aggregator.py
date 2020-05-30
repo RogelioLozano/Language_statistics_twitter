@@ -5,8 +5,7 @@ import os
 
 # reads at h hour aggrgated data and return 2h aggregated data
 
-# countries = ["Mexico", "United_Kingdom","Spain","India"]
-countries = ["Argentina"]
+countries = ["Mexico", "United_Kingdom","Spain","India","Argentina"]
 
 dist4country = { "Mexico":np.arange(0,11), "United_Kingdom":np.arange(0,10),"Spain":np.arange(0,9),"India":np.arange(0,11),"South_Africa":np.arange(0,11),'Argentina':np.arange(0,11)}
 

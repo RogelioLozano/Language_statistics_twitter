@@ -4,10 +4,10 @@ import pandas as pd
 import numpy as np
 import shapely.geometry
 
-partial_path =  "/storage/gershenson_g/gershenson/Ranks_15-10-18/Filtrados/Formatted_data"
+#modify the next path to where is you data if you cloned the repository
+partial_path =  "/storage/gershenson_g/gershenson/Ranks_15-10-18/Filtrados/Formatted_data" #data in cluster
 
-# countries = ["Mexico", "United_Kingdom","Spain","India","South_Africa"]
-countries = ["Argentina"]
+countries = ["Mexico", "United_Kingdom","Spain","India","South_Africa","Argentina"]
 
 def buffer_filter(center,data,distances):
     """
@@ -48,11 +48,11 @@ def buffer_filter(center,data,distances):
 
     return pd.concat(tweets),pd.DataFrame(data={"Distance(km)":list(results.keys()),"Num_tweets":list(results.values())})
 
-centermex = (-99.133217,19.432777) #long,latitud of Zocalo
-centeruk = (-0.118092,51.509865) #long, latitud of London center
+centermex = (-99.133217,19.432777) #long,latitud 
+centeruk = (-0.118092,51.509865) 
 centerspain= (-3.70275,40.4183083)
 centerindia=(77.216721,28.644800)
-centersouthafrica=(18.423300,-33.918861,)#long, latitud 
+centersouthafrica=(18.423300,-33.918861)
 centerargentina=(-58.3772300,-34.6131500)
 
 
