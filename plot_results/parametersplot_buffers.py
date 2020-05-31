@@ -70,7 +70,7 @@ TIME = [3,6,12,24,48,96]
 # countries = ["Mexico", "United_Kingdom","Spain","India","Argentina"]
 countries = ["Argentina"]
 totalgrams = 1200
-path = os.path.join(os.getenv("HOME"),'parameters_plotBuffers')
+path = os.path.join(os.getenv("HOME"),'plots_RD','parameters_plotBuffers')
 
 for country in countries:
     # <--------------___!!!!!!!!

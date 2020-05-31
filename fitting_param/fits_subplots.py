@@ -42,7 +42,7 @@ def plot_paramet(vscale,param,country,ngram,timeint,ax,marker='o',level=None):
     ngrams: 1,2,3,4,5
     timeint: 3,6,12,24,48,96"""
 
-    inputpath = os.path.join(os.getenv("HOME"),'archivos_paragrafficar_SERVICIOSOCIAL','Buffers_Datosyprogramas','curveFit_parametros','parametros_valores/1000ngrams/',country,'display_ngrams',f'{param}_vs_{vscale}')
+    inputpath = os.path.join(os.getenv("HOME"),'parametros_valores/1000ngrams/',country,'display_ngrams',f'{param}_vs_{vscale}')
     
     dist4country = { "Mexico":np.arange(0,11), "United_Kingdom":np.arange(0,10),"Spain":np.arange(0,9),"India":np.arange(0,11),'Argentina':np.arange(0,11)}
     base=2
@@ -81,7 +81,7 @@ TIME = [3,6,12,24,48,96]
 #Modificar si cambio paises <--------------___!!!!!!!!
 countries = ["Mexico", "United_Kingdom","Spain","Argentina"]
 totalgrams = 1000
-path = os.path.join(os.getenv("HOME"),'archivos_paragrafficar_SERVICIOSOCIAL','Buffers_Datosyprogramas','curveFit_parametros','fitted_suplots')
+path = os.path.join(os.getenv("HOME"),'fitted_suplots')
 sharey = True
 sharex = False
 

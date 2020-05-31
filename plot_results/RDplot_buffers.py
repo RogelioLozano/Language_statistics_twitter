@@ -66,7 +66,7 @@ TIME = [3,6,12,24,48,96]
 countries=['Argentina']
 
 totalgrams = 1200
-path = os.path.join(os.getenv("HOME"),'lognormalfit_plotsBuffers','{}grams'.format(totalgrams))
+path = os.path.join(os.getenv("HOME"),'plots_RD','lognormalfit_plotsBuffers','{}grams'.format(totalgrams))
 
 for country in countries:
     # MODIFICAR LO DE ABAJO SI AGREGAS PAISES  <--------------___!!!!!!!!

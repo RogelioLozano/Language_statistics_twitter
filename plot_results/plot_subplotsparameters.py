@@ -59,7 +59,7 @@ TIME = [3,6,12,24,48,96]
 #Modificar si cambio paises <--------------___!!!!!!!!
 countries = ["Mexico", "United_Kingdom","Spain","Argentina"]
 totalgrams = 1000
-path = os.path.join(os.getenv("HOME"),'subplots_parameters')
+path = os.path.join(os.getenv("HOME"),'plots_RD','subplots_parameters')
 sharey = True
 sharex = False
 
