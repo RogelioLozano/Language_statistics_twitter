@@ -8,7 +8,7 @@ import pandas as pd
 import seaborn as sns
 sns.set()
 
-prepath = '/home/emmanuel/archivos_paragrafficar_SERVICIOSOCIAL/Buffers_Datosyprogramas/Datos_todoslosPaises/'
+prepath ='Datos_todoslosPaises/'
 
 #     ------------------------------------------------------------
 def EvalnormCdf(x,mu,sigma):
@@ -45,7 +45,7 @@ def mu_sigma_ngramsvar(fixed,value,country,level,ngrams,timeint,parametros,ax=No
         #scale fixed (mu vs time interval)
         ax.plot(TIME,parametros.loc[ngrams],marker='o',label='{},{}km,ng={}'.format(country,distancias[level]/1000,ngrams))
         ax.set_xlabel('Temporal scale (hrs)',fontsize=20)
-#         ax.set_xticks(TIME)  # si quiero mostrar los tiempos exactos 3,6, 12hrs etc en el eje x
+#         ax.set_xticks(TIME)  # si quieres mostrar los tiempos exactos 3,6, 12hrs etc en el eje x
         if value == 'mu':
             ax.set_ylabel('$\mu$',fontsize=20)
         else:
@@ -70,7 +70,7 @@ TIME = [3,6,12,24,48,96]
 # countries = ["Mexico", "United_Kingdom","Spain","India","Argentina"]
 countries = ["Argentina"]
 totalgrams = 1200
-path = os.path.join(os.getenv("HOME"),'archivos_paragrafficar_SERVICIOSOCIAL','Buffers_Datosyprogramas','parameters_plotBuffers')
+path = os.path.join(os.getenv("HOME"),'parameters_plotBuffers')
 
 for country in countries:
     # <--------------___!!!!!!!!

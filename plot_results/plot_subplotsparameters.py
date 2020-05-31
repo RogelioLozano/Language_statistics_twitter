@@ -9,7 +9,7 @@ import seaborn as sns
 sns.set()
 sns.set_style('ticks')
 
-prepath = '/home/emmanuel/archivos_paragrafficar_SERVICIOSOCIAL/Buffers_Datosyprogramas/Datos_todoslosPaises/'
+prepath = 'Datos_todoslosPaises/'
 
 def EvalnormCdf(x,mu,sigma):
     return scipy.stats.norm.cdf(np.log10(x),loc=mu,scale=sigma)
@@ -59,7 +59,7 @@ TIME = [3,6,12,24,48,96]
 #Modificar si cambio paises <--------------___!!!!!!!!
 countries = ["Mexico", "United_Kingdom","Spain","Argentina"]
 totalgrams = 1000
-path = os.path.join(os.getenv("HOME"),'archivos_paragrafficar_SERVICIOSOCIAL','Buffers_Datosyprogramas','subplots_parameters')
+path = os.path.join(os.getenv("HOME"),'subplots_parameters')
 sharey = True
 sharex = False
 

@@ -7,7 +7,7 @@ import pandas as pd
 from copy import deepcopy
 from matplotlib.pyplot import cm
 
-prepath = '/home/emmanuel/archivos_paragrafficar_SERVICIOSOCIAL/Buffers_Datosyprogramas/Datos_todoslosPaises/'
+prepath = 'Datos_todoslosPaises/'
 
 def EvalnormCdf(x,mu,sigma):
     return scipy.stats.norm.cdf(np.log10(x),loc=mu,scale=sigma)
@@ -66,7 +66,7 @@ TIME = [3,6,12,24,48,96]
 countries=['Argentina']
 
 totalgrams = 1200
-path = os.path.join(os.getenv("HOME"),'archivos_paragrafficar_SERVICIOSOCIAL','Buffers_Datosyprogramas','lognormalfit_plotsBuffers','{}grams'.format(totalgrams))
+path = os.path.join(os.getenv("HOME"),'lognormalfit_plotsBuffers','{}grams'.format(totalgrams))
 
 for country in countries:
     # MODIFICAR LO DE ABAJO SI AGREGAS PAISES  <--------------___!!!!!!!!
