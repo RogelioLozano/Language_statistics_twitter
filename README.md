@@ -10,7 +10,7 @@ The metodology is based on a line of research related to rank dynamics of word u
 This project is part of the work that I did in my social service at Instituto de Investigaciones en Matemáticas Aplicadas y en Sistemas (IIMAS).
 
 
-The [analysis notebook](https://github.com/RogelioLozano/Language_statistics_twitter/blob/master/Analysis_notebook.ipynb) shows a summary of the statistical methods performed and plots of the results.
+The [analysis notebook](https://github.com/RogelioLozano/Language_statistics_twitter/blob/master/stat_analysis/Analysis_notebook.ipynb) shows a summary of the statistical methods performed and plots of the results.
 
 
 ### Requirements:
