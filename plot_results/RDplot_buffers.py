@@ -7,7 +7,7 @@ import pandas as pd
 from copy import deepcopy
 from matplotlib.pyplot import cm
 
-prepath = 'Datos_todoslosPaises/'
+prepath = '../Datos_todoslosPaises/'
 
 def EvalnormCdf(x,mu,sigma):
     return scipy.stats.norm.cdf(np.log10(x),loc=mu,scale=sigma)
@@ -62,10 +62,9 @@ def plotnormCdfFit(country,level,ngrams,timeint,totalgrams,color,ax=None):
 NGRAMS = [1,2,3,4,5]
 TIME = [3,6,12,24,48,96]
 # AUMENTAR PAISES AQUI <--------------___!!!!!!!!
-# countries = ["Mexico", "United_Kingdom","Spain","India"]
-countries=['Argentina']
+countries = ["Mexico", "United_Kingdom","Spain","India"]
 
-totalgrams = 1200
+totalgrams = 1000
 path = os.path.join(os.getenv("HOME"),'plots_RD','lognormalfit_plotsBuffers','{}grams'.format(totalgrams))
 
 for country in countries:
