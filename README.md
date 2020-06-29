@@ -1,6 +1,6 @@
 # Language statistics using geolocated twitter data.
 
-In this project using proximity and regression analysis around 18 million geolocated twitter data from three Spanish-speaking and one English-speaking countries (Mexico, Spain, Argentina, and the United Kingdom)  to find out what can be said about:
+In this project using proximity and regression analysis, around 18 million geolocated twitter data from four countries (Mexico, Spain, Argentina, and the United Kingdom) were analyzed to find out what can be said about:
 
 + The change in the use of language in different geographical, grammatical, and short time scales.
 + Which scale is the most important?
