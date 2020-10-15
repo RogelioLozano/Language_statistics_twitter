@@ -1,6 +1,6 @@
 # Language statistics using geolocated twitter data.
 
-In this project using proximity and regression analysis around 18 million geolocated twitter data from three Spanish-speaking and one English-speaking countries (Mexico, Spain, Argentina, and the United Kingdom)  to find out what can be said about:
+In this project using proximity and regression analysis, around 18 million geolocated twitter data from four countries (Mexico, Spain, Argentina, and the United Kingdom) were analyzed to find out what can be said about:
 
 + The change in the use of language in different geographical, grammatical, and short time scales.
 + Which scale is the most important?
@@ -10,7 +10,7 @@ The metodology is based on a line of research related to rank dynamics of word u
 This project is part of the work that I did in my social service at Instituto de Investigaciones en Matemáticas Aplicadas y en Sistemas (IIMAS).
 
 
-The [analysis notebook](https://github.com/RogelioLozano/Language_statistics_twitter/blob/master/Analysis_notebook.ipynb) shows a summary of the statistical methods performed and plots of the results.
+The [analysis notebook](https://github.com/RogelioLozano/Language_statistics_twitter/blob/master/stat_analysis/Analysis_notebook.ipynb) shows a summary of the statistical methods performed and plots of the results.
 
 
 ### Requirements:
